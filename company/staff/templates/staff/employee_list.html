@@ -1,0 +1,25 @@
+{% extends 'staff/basic.html' %}
+
+{% block title%} Employee List {% endblock %}
+{% block body %}
+
+<h2>Employee List</h2><hr/>
+
+      <!-- Iterate over object_list -->
+      {% for object in object_list %}
+      <!-- Display Objects -->
+            <div class="form-row mx-auto">
+                <div class="form-group col-md-6">
+                    <label for="name">Employee Name : {{ object.Employee_name }}</label><br/>
+                    <label for="name">Department Name : {{ object.Department }}</label>
+                </div>
+            </div>
+            <hr/>
+
+      <!-- If objet_list is empty  -->
+      {% empty %}
+      <li>No objects yet.</li>
+      {% endfor %}
+
+{% endblock %}
+</html>
